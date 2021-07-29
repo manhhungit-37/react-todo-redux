@@ -1,31 +1,23 @@
 import React from 'react'
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 // actions
 import { increment, decrement } from 'actions/counterActions';
 
-const mapStateToProps = (state) => {
-  return {
-    counter: state.counter.counter
-  }
-}
+function Counter() {
+  const dispatch = useDispatch();
+  const counter = useSelector(state => state.counter.counter)
 
-const mapDispatchToProps = {
-  increment,
-  decrement
-}
-
-function Counter({ counter, increment, decrement }) {
   return (
     <div>
       <h2>Counter</h2>
       Numbers: {counter}
       <br /><br />
-      <button type="button" onClick={() => increment(1)}>Increment</button>   
+      <button type="button" onClick={() => dispatch(increment(1)) }>Increment</button>   
       {" "}
-      <button type="button" onClick={() => decrement(1)}>Decrement</button>
+      <button type="button" onClick={() => dispatch(decrement(1))}>Decrement</button>
     </div>
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+export default Counter;

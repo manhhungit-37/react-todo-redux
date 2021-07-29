@@ -4,6 +4,16 @@ import { connect } from 'react-redux';
 //action
 import { DELETE_TODO } from "actions/todosActions";
 
+const mapStateToProps = state => {
+  return {
+    todos: state.todos.todos
+  }
+}
+
+const mapDispatchToProps = {
+  DELETE_TODO,
+}
+
 function TodoList(props) {
   const { todos, DELETE_TODO } = props;
 
@@ -29,16 +39,6 @@ function TodoList(props) {
       </table>
     </>
   )
-}
-
-const mapStateToProps = state => {
-  return {
-    todos: state.todos.todos
-  }
-}
-
-const mapDispatchToProps = {
-  DELETE_TODO,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);

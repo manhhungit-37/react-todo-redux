@@ -1,4 +1,4 @@
-* { 
+* {
   box-sizing: border-box;
 }
 
@@ -19,13 +19,13 @@ html {
   &__form {
     display: block;
     margin: 1.3rem 0;
-  
+
     &--addInput {
       padding: 5px;
       font-size: 16px;
       outline: none;
     }
-  
+
     &--addButton {
       margin-left: 1rem;
       font-size: 16px;
@@ -43,7 +43,7 @@ html {
     }
 
     &--name {
-      text-transform: capitalize; 
+      text-transform: capitalize;
     }
 
     &--delete {
