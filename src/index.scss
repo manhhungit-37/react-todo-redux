@@ -1,0 +1,67 @@
+* { 
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.table__todos__list {
+  border-spacing: 10px 10px;
+}
+
+.todos {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 0 20px;
+
+  &__form {
+    display: block;
+    margin: 1.3rem 0;
+  
+    &--addInput {
+      padding: 5px;
+      font-size: 16px;
+      outline: none;
+    }
+  
+    &--addButton {
+      margin-left: 1rem;
+      font-size: 16px;
+      padding: 6px;
+      background-color: #8df542;
+      border: 1px solid #8df542;
+      outline: none;
+      cursor: pointer;
+    }
+  }
+
+  &__line {
+    & td {
+      text-align: center;
+    }
+
+    &--name {
+      text-transform: capitalize; 
+    }
+
+    &--delete {
+      padding: 7px 12px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      cursor: pointer;
+      outline: none;
+
+      &:hover {
+        color: #40a9ff;
+        border: 1px solid #40a9ff;
+      }
+    }
+  }
+}
+
+.danger {
+  color: #ff0000;
+}

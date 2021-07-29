@@ -1,16 +1,15 @@
-export const SET_INCREMENT = 'COUNTER/SET_INCREMENT';
-export const SET_DECREMENT = 'COUNTER/SET_DECREMENT';
+import * as actionTypes from 'constance/types';
 
 export function increment(payload) {
   return {
-    type: SET_INCREMENT,
+    type: actionTypes.SET_INCREMENT,
     payload
   }
 }
 
 export function decrement(payload) {
   return {
-    type: SET_DECREMENT,
+    type: actionTypes.SET_DECREMENT,
     payload
   }
 }

@@ -1,5 +1,4 @@
-// import { SET_INCREMENT, SET_DECREMENT } from "../actions/counterActions"
-import * as actionTypes from "actions/counterActions"
+import * as actionTypes from "constance/types";
 
 const initialState = {
   counter: 0
