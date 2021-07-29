@@ -1,12 +1,15 @@
-import { combineReducers, createStore, compose } from "redux";
+import { combineReducers, createStore, compose, applyMiddleware } from "redux";
+import thunk from 'redux-thunk';
 
 // reducers
 import counterReducers from 'reducers/counterReducers';
 import todosReducers from 'reducers/todosReducers';
+import userReducers from 'reducers/userReducers';
 
 const rootReducers = combineReducers({
   counter: counterReducers,
   todos: todosReducers,
+  users: userReducers
 })
 
 const composeEnhancers =
@@ -14,7 +17,7 @@ const composeEnhancers =
 
 const store = createStore(
   rootReducers,
-  composeEnhancers()
+  composeEnhancers(applyMiddleware(thunk))
 )
 
 export default store;

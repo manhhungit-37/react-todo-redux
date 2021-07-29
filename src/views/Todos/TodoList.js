@@ -29,7 +29,7 @@ function TodoList(props) {
         <tbody>
           {todos.length > 0 && todos.map(todo => (
             <tr key={todo.id} className="todos__line">
-              <td className="todos__line--name">{todo.name}</td>
+              <td className="todos__line--name">{todo.title}</td>
               <td>
                 <button type="button" className="todos__line--delete" onClick={() => DELETE_TODO(todo.id)}>DELETE</button>
               </td>

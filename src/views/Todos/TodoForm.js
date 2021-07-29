@@ -14,7 +14,7 @@ function TodoForm(props) {
     if (errorAddTodo) setErrorAddTodo(false);
     const newTodo = {
       id: Date.now(),
-      name: text,
+      title: text,
     }
     ADD_TODO(newTodo);
     setText("");

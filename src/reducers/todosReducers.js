@@ -1,11 +1,34 @@
 import * as actionTypes from 'constance/types';
 
 const initialState = {
+  isLoading: false,
+  isErrors: false,
   todos: [],
 };
 
 const reducer = (state = initialState, { type, payload }) => {
   switch(type) {
+    case actionTypes.FETCH_TODO_START: {
+      return {
+        ...state,
+        isLoading: true,
+        isErrors: false
+      }
+    }
+    case actionTypes.FETCH_TODO_SUCCESS: {
+      return {
+        ...state,
+        isLoading: false,
+        todos: payload
+      }
+    }
+    case actionTypes.FETCH_TODO_FAILURE: {
+      return {
+        ...state,
+        isLoading: false,
+        isErrors: true
+      }
+    }
     case actionTypes.ADD_TODO: {
       return {
         ...state,
